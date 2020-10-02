@@ -18,8 +18,8 @@ function writePassword() {
 
 function passwordLength() {
   var pwCharLength = window.prompt("Please select how many characters you would like your password to be with a minimum of 8 and a maximum of 128.");
-  console.log(pwCharLength);
-  lengthInput = parseInt(pwCharLength);
+  (pwCharLength);
+  var lengthInput = parseInt(pwCharLength);
   
     if (lengthInput >= 8 && lengthInput <= 128) {
       window.alert("Thank you! You have chosen " + lengthInput + " characters.");
@@ -32,19 +32,19 @@ function passwordLength() {
  }
 
  // Generate random characters from the arrays
- function randomizer(arr) {
+ function randomCharGenerator(arr) {
     var arrayIndex = Math.floor(Math.random() * arr.length);
-    selectedCharacter = arr[arrayIndex];
-    console.log(selectedCharacter);
+    var selectedCharacter = arr[arrayIndex];
+    (selectedCharacter);
     return selectedCharacter;
  }
 
 
 function generatePassword() {
-  randomizer(upperChar);
-  randomizer(lowerChar);
-  randomizer(numericChar);
-  randomizer(specialChar);
+  // randomCharGenerator(upperChar);
+  // randomCharGenerator(lowerChar);
+  // randomCharGenerator(numericChar);
+  // randomCharGenerator(specialChar);
 
   var chosenLength = passwordLength();
   var upperConfirm = window.confirm("Would you like to include upper case letters?");
@@ -75,7 +75,7 @@ function generatePassword() {
 
   var pwd = "";
   for (i = 1; i <= chosenLength; i++){
-    pwd = pwd + randomizer(selectedTypes);
+    pwd = pwd + randomCharGenerator(selectedTypes);
     console.log(pwd);
   }
 
